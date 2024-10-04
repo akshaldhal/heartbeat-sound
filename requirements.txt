@@ -1,0 +1,10 @@
+perpetual
+matplotlib
+numpy
+pandas
+tensorflow
+torch
+torchvision
+torchaudio
+notebook
+scikit-learn

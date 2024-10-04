@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+
+# Python virtual environments
+venv/
+env/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+egg-info/
+pip-wheel-metadata/
+*.egg-info/
+*.egg
+
+# IDE or editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Pytest cache
+.cache/
+*.cover
+*.log
+
+# Miscellaneous
+*.DS_Store
+*.bak
+*.tmp
+*.tmp.*
+*.orig
+*.csv
+*.json
+*.xlsx
+
+#Extracted dataset
+extracted/
+
+#dataset
+*.zip
