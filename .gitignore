@@ -52,3 +52,16 @@ extracted/
 
 #dataset
 *.zip
+
+#CMake files
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+Makefile
+
+# Temporary files and directories
+*.log
+*.tmp
+*.tmp.*
+temp/
+tmp/
