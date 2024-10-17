@@ -1,11 +1,18 @@
 import librosa
 import numpy as np
+from sklearn.preprocessing import StandardScaler
 
 DELTA_TIME = 0.001
 MAX_FREQ_LEN = 381057
 
 def post_pad_list(lst, length):
     return lst + [[0, 0]] * (length - len(lst))
+
+def flatten_2d_list(lst):
+  list = []
+  for sublist in lst:
+    for item in sublist:
+      list.append(item)
 
 def extract_frequencies(filename, delta_time, method='dominant'):
   y, sr = librosa.load(filename, sr=None)
@@ -52,9 +59,12 @@ def extract_frequencies(filename, delta_time, method='dominant'):
   return frequency_amplitude_pairs
 
 
-audio_filename = "example.wav"
+# audio_filename = "example.wav"
+audio_filename = "extracted/archive/DHD/audio/abnormal_s3_2023_0.wav"
 audio_wave_data = extract_frequencies(audio_filename, DELTA_TIME)
 if len(audio_wave_data) < MAX_FREQ_LEN:
   audio_wave_data = post_pad_list(audio_wave_data, MAX_FREQ_LEN)
 elif len(audio_wave_data) > MAX_FREQ_LEN:
   audio_wave_data = audio_wave_data[:MAX_FREQ_LEN]
+
+audio_wave_data = flatten_2d_list(audio_wave_data)
