@@ -62,6 +62,7 @@ Makefile
 # Temporary files and directories
 *.log
 *.tmp
+*.temp
 *.tmp.*
 temp/
 tmp/

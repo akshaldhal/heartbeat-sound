@@ -18,7 +18,13 @@ def freq_amp_pair_string_to_list(string):
 def post_pad_list(lst, length):
     return lst + [[0, 0]] * (length - len(lst))
 
-processed_dataset = pd.read_csv("extracted/archive/DHD/processed_dataset.csv")
+def convert_non_zero_to_one(x):
+    if x == 0:
+        return 0
+    else:
+        return 1
+
+processed_dataset = pd.read_csv("extracted/archive/DHD/processed_dataset_small.csv")
 if DROPPING_ARTIFACTS:
     processed_dataset = processed_dataset[processed_dataset["label_value"] != 3]
 
@@ -28,6 +34,9 @@ processed_dataset = processed_dataset.sort_values(by="freq_len", ascending=False
 
 max_freq_len = processed_dataset["freq_len"].max()
 processed_dataset["extracted_freq"] = processed_dataset["extracted_freq"].apply(post_pad_list, length=max_freq_len)
+
+# Convert the label values to 0 and 1
+processed_dataset["label_value"] = processed_dataset["label_value"].apply(convert_non_zero_to_one)
 
 # Normalize the data
 scaler = StandardScaler()
@@ -84,11 +93,11 @@ class FCNNClassifier(nn.Module):
 
 # Hyperparameters
 input_size = flattened_data.shape[1]  # Length of the flattened input vector
-# hidden_sizes = [128, 64, 32, 16]  # full, at 128 batch size
-hidden_sizes = [128, 64, 32, 16]  # List of hidden layer sizes
-num_classes = len(processed_dataset["label_value"].unique())+1
+# hidden_sizes = [128, 64]  # full, at 128 batch size
+hidden_sizes = [128, 64]  # List of hidden layer sizes
+num_classes = len(processed_dataset["label_value"].unique())
 batch_size = 128
-num_epochs = 50
+num_epochs = 20
 learning_rate = 0.001
 
 # Prepare dataset and dataloader
@@ -155,11 +164,6 @@ for epoch in range(num_epochs):
     print(f'Epoch [{epoch+1}/{num_epochs}], Train Loss: {running_loss/len(train_loader):.4f}, Train Accuracy: {train_accuracy:.2f}%, Val Loss: {val_loss/len(test_loader):.4f}, Val Accuracy: {val_accuracy:.2f}%')
 
 print("Training complete.")
-
-# Save the trained model
-model_path = "trained_fcnn_classifier_model_128_to_16_.pth"
-torch.save(model.state_dict(), model_path)
-print(f"Model saved to {model_path}")
 
 # Final test
 model.eval()
