@@ -1,9 +1,12 @@
+# Needs to be updated to work with the new model format.
+
 import librosa
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 
-DELTA_TIME = 0.001
-MAX_FREQ_LEN = 381057
+DELTA_TIME = 0.01
+MAX_FREQ_LEN = 47633
+# extracted/archive/DHD/audio/normal_2023_0.wav
 
 def post_pad_list(lst, length):
     return lst + [[0, 0]] * (length - len(lst))

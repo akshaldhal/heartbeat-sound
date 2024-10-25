@@ -63,9 +63,9 @@ def main():
     # Hyperparameters
     input_size = flattened_data.shape[1]
     # hidden_sizes = [64, 32, 16] for small set, batch size 32, 71.05% accuracy
-    # hidden_sizes = [64, 32, 16] for small set, batch size 64, 73.68% accuracy      WINNER
+    # hidden_sizes = [16, 8] for small set, batch size 64, 73.68% accuracy          WINNER
     
-    hidden_sizes = [64, 32, 16]
+    hidden_sizes = [16, 8]
     num_classes = len(processed_dataset["label_value"].unique())+1
     batch_size = 64
     num_epochs = 50
