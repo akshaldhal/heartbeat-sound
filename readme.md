@@ -59,7 +59,7 @@ The current model achieves an accuracy of ~73% on the small dataset, with a comp
   - `train.py`: Script used to train the model on the processed datasets.
 
 - **Model Inference**
-  - `run_model.py`: Currently under development. This script will enable users to run the model on new data.
+  - `run_model.py`: Currently under development. When completed this will be the onyl script needed to run the model.
 
 ---
 
@@ -78,7 +78,7 @@ _Note: `run_model.py` is under development to provide an easy-to-use interface f
 
 - **Additional Feature Engineering**: Exploring features beyond frequency and amplitude, such as Mel-frequency cepstral coefficients (MFCCs) or spectral contrast.
 - **Model Optimization**: Experimenting with quantization and pruning techniques to further reduce model size without sacrificing accuracy.
-- **Hyperparameter Tuning**: Further exploration of model hyperparameters to enhance performance on smaller datasets.
+- **Other approachs**: Using some other approach like CNN, RNN, etc. instead of a fully connected neural network.
 
 ---
 
