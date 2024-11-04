@@ -66,6 +66,3 @@ Makefile
 *.tmp.*
 temp/
 tmp/
-trained_fcnn_classifier_model_128_to_16_7281.pth
-trained_fcnn_classifier_model_64_to_16_7368.pth
-trained_fcnn_classifier_model_16_to_8_7368.pth
