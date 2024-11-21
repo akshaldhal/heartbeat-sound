@@ -67,9 +67,9 @@ The current model achieves an accuracy of ~73% on the small dataset, with a comp
 
 To train the model, execute the following steps:
 
-1. Run `preprocessor1.py` or `preprocessor2.py` to prepare the dataset.
-2. Use `train.py` to train the model on the processed dataset.
-3. Run `run_model.py` to load the trained model and perform inference on a given audio file.
+1. Edit `run_model.py` to specify the audio file path to be classified.
+2. Run `run_model.py` to load the trained model and classify the audio file.
+3. That's it! The script will output the predicted heartbeat sound type (0 = Normal, 1 = Extrahls, 2 = Murmur, 4 = Extrastole).
 
 ---
 
