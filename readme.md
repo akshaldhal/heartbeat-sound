@@ -11,6 +11,16 @@ The model utilizes the [Dangerous Heartbeat Dataset (DHD)](https://www.kaggle.co
 
 ---
 
+## Getting Started
+
+To run the pre-trained model, follow the steps below:
+
+1. Edit `run_model.py` to specify the audio file path to be classified.
+2. Run `run_model.py` to load the trained model and classify the audio file.
+3. That's it! The script will output the predicted heartbeat sound type (0 = Normal, 1 = Extrahls, 2 = Murmur, 4 = Extrastole).
+
+---
+
 ## Project Overview
 
 ### Objective
@@ -60,16 +70,6 @@ The current model achieves an accuracy of ~73% on the small dataset, with a comp
 
 - **Model Inference**
   - `run_model.py`: Single script to load the trained model and run inference on a given audio file, uses `alignment_reference.pkl`, `amp_scaler.pkl`, `freq_scaler.pkl`, and `final_model_fcnn_classifier_16_8_7368.pth`.
-
----
-
-## Getting Started
-
-To train the model, execute the following steps:
-
-1. Edit `run_model.py` to specify the audio file path to be classified.
-2. Run `run_model.py` to load the trained model and classify the audio file.
-3. That's it! The script will output the predicted heartbeat sound type (0 = Normal, 1 = Extrahls, 2 = Murmur, 4 = Extrastole).
 
 ---
 
