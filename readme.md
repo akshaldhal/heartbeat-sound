@@ -59,7 +59,7 @@ The current model achieves an accuracy of ~73% on the small dataset, with a comp
   - `train.py`: Script used to train the model on the processed datasets.
 
 - **Model Inference**
-  - `run_model.py`: Currently under development. When completed this will be the only script needed to run the model.
+  - `run_model.py`: Single script to load the trained model and run inference on a given audio file, uses `alignment_reference.pkl`, `amp_scaler.pkl`, `freq_scaler.pkl`, and `final_model_fcnn_classifier_16_8_7368.pth`.
 
 ---
 
@@ -69,8 +69,7 @@ To train the model, execute the following steps:
 
 1. Run `preprocessor1.py` or `preprocessor2.py` to prepare the dataset.
 2. Use `train.py` to train the model on the processed dataset.
-
-_Note: `run_model.py` is under development to provide an easy-to-use interface for running the trained model._
+3. Run `run_model.py` to load the trained model and perform inference on a given audio file.
 
 ---
 
